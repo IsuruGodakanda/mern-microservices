@@ -10,10 +10,13 @@ import resolvers from "#root/graphql/resolvers";
 import typeDefs from "#root/graphql/typeDefs";
 import accessEnv from "#root/helpers/accessEnv";
 
+import formatGraphQLErrors from "./formatGraphQLErrors";
+
 async function bootstrap() {
   const httpServer = http.createServer(app);
 
   const apolloServer = new ApolloServer({
+    formatError: formatGraphQLErrors,
     typeDefs,
     resolvers,
     csrfPrevention: true,
