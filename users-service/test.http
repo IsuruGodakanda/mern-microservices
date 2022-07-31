@@ -1,0 +1,11 @@
+### Get Listings
+GET http://localhost:7100/listings HTTP/1.1
+
+### Create user
+POST http://localhost:7101/users HTTP/1.1
+content-type: application/json
+
+{
+  "email": "isuru2@mail.com",
+  "password": "password"
+}
